@@ -1,0 +1,21 @@
+{
+    "name": "logicalor/gpxcleaner",
+    "description": "Attempts to clean erroneous points from GPX files",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "sibyx/phpgpx": "@RC"
+    },
+    "authors": [
+        {
+            "name": "Shaun Johnston",
+            "email": "hello@shaun.id.au"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Logicalor\\": "src/"
+        }
+    }
+}
