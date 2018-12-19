@@ -25,6 +25,10 @@ class GpxCleaner
 
     }
 
+    public function getFile() {
+      return $this->file;
+    }
+
     public function trim() 
     {
 
