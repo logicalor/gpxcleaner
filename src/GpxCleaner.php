@@ -21,6 +21,7 @@ class GpxCleaner
             'distanceThreshold' => (isset($config['distanceThreshold'])) ? $config['distanceThreshold'] : 40,
             'angleThreshold' => (isset($config['angleThreshold'])) ? $config['angleThreshold'] : 90,
             'trimSteps' => (isset($config['trimSteps'])) ? $config['trimSteps'] : 2,
+            'speedThreshold' => (isset($config['speedThreshold'])) ? $config['speedThreshold'] : 8,
         ];
 
     }
@@ -137,7 +138,7 @@ class GpxCleaner
     
                 if (count($candidates) > 1) {
                     $chosen = array_reduce(array_reverse($candidates), function($carry, $candidate) use ($angleThreshold) {
-                        if ($candidate['angleDifference'] < $angleThreshold && $candidate['speed'] < 8) {
+                        if ($candidate['angleDifference'] < $angleThreshold && $candidate['speed'] < $this->config['speedThreshold']) {
                             $carry = $candidate['index'];
                         }
                         return $carry;
